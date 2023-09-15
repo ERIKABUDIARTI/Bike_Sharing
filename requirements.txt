@@ -3,6 +3,6 @@ numpy
 matplotlib
 seaborn
 plotly.py == 5.16.1
-streamlit == 23.2.1
+streamlit == 1.19.0
 tkinter
 turtle
