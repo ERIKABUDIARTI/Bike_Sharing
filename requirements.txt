@@ -5,3 +5,4 @@ seaborn
 plotly.py = 5.16.1
 streamlit
 tkinter==8.6.*
+turtle
