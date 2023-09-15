@@ -4,4 +4,4 @@ matplotlib
 seaborn
 plotly.py = 5.16.1
 streamlit
-tk==8.6.*
+tkinter==8.6.*
