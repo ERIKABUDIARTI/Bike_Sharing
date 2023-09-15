@@ -3,6 +3,8 @@ numpy
 matplotlib
 seaborn
 plotly.express
+plotly.subplots
+plotly.graph_objects
 streamlit
 tkinter
 turtle
