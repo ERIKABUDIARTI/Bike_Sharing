@@ -29,9 +29,10 @@ st.write("""
 img=Image.open("bike.jpg")
 
 with st.sidebar:
-    st.header('This Portfolio is deployed as the final project of IDCamp 2023')
-    st.subheader('which is collaborated between Indosat Ooredoo Hutchison X Dicoding')
-    st.write ('Submitted by :[ERIKA BUDIARTI](https://www.linkedin.com/in/erikabudiarti/')
+    st.header ("""
+              This Portfolio is deployed as the final project of IDCamp 2023, collaborated between Indosat X Dicoding
+               """)
+    st.write ('Submitted by :[ERIKA BUDIARTI](https://www.linkedin.com/in/erika-budiarti/)')
     st.image (img, width = 300)
               
 
