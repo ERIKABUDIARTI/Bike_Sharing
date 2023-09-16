@@ -4,4 +4,3 @@ matplotlib
 seaborn
 plotly
 streamlit == 23.3.1
-turtle
