@@ -1,6 +1,4 @@
 pandas
 numpy
-matplotlib
-seaborn
 plotly
 streamlit == 23.3.1
