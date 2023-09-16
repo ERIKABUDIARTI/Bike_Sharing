@@ -8,6 +8,7 @@ import plotly.figure_factory as ff
 import plotly.express as px
 #import plotly.subplots as sp
 import plotly.graph_objects as go
+from PIL import Image
 
 def background():
     st.set_page_config(layout="wide",
@@ -23,6 +24,16 @@ st.write("""
 st.write("""
         # :bike:  This app analyzes "Bike Sharing" dataset  :bike:
         """)
+
+#Add picture
+img=Image.open("bike.jpg")
+
+with st.sidebar:
+    st.header('This Portfolio is deployed as the final project of IDCamp 2023')
+    st.subheader('which is collaborated between Indosat Ooredoo Hutchison X Dicoding')
+    st.write ('Submitted by :[ERIKA BUDIARTI](https://www.linkedin.com/in/erikabudiarti/')
+    st.image (img, width = 300)
+              
 
 def read_data(csv):
     bike_df = pd.read_csv(csv)
