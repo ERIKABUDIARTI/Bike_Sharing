@@ -22,7 +22,7 @@ st.write("""
         """)
 
 st.write("""
-        # :bike:  Visualizing "Bike Sharing" dataset  :bike:
+        # :bike:  Visualizing "Bike Sharing" Interactive Chart   :bike:
         """)
 
 #Add picture
