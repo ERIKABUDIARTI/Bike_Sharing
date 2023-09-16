@@ -1,4 +1,3 @@
-#from turtle import title
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -6,7 +5,6 @@ import pandas as pd
 #import seaborn as sns
 import plotly.figure_factory as ff
 import plotly.express as px
-#import plotly.subplots as sp
 import plotly.graph_objects as go
 from PIL import Image
 
