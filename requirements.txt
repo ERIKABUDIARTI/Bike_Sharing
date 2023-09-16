@@ -1,4 +1,4 @@
 pandas
 numpy
-plotly-express == 5.17.0
+plotly-express
 streamlit == 23.3.1
