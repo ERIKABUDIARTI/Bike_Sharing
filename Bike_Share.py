@@ -30,7 +30,7 @@ img=Image.open("bike.jpg")
 
 with st.sidebar:
     st.header ("""
-              This Portfolio is deployed as one of final projects of [IDCamp 2023](https://idcamp.ioh.co.id/), collaborated between Indosat X Dicoding
+              This Portfolio is deployed as one of final projects of [IDCamp 2023](https://www.idcamp.ioh.co.id/), collaborated between Indosat X Dicoding
                """)
     st.write ('Submitted by :[ERIKA BUDIARTI](https://www.linkedin.com/in/erika-budiarti/)')
     st.image (img, width = 300)
