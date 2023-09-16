@@ -1,4 +1,4 @@
-# Dashbpard for Bike Sharing Dataset ✨
+# Dashboard for Bike Sharing Dataset ✨
 
 ## Setup environment
 ```
