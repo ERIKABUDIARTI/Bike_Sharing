@@ -22,7 +22,7 @@ st.write("""
         """)
 
 st.write("""
-        # :bike:  This app analyzes "Bike Sharing" dataset  :bike:
+        # :bike:  Visualizing "Bike Sharing" dataset  :bike:
         """)
 
 #Add picture
@@ -30,7 +30,7 @@ img=Image.open("bike.jpg")
 
 with st.sidebar:
     st.header ("""
-              This App is deployed as one of final projects of [IDCamp 2023](https://www.idcamp.ioh.co.id/), collaborated between Indosat X Dicoding
+              This Dashboard is deployed as one of final projects of [IDCamp 2023](https://www.idcamp.ioh.co.id/), collaborated between Indosat X Dicoding
                """)
     st.write ('Submitted by :[ERIKA BUDIARTI](https://www.linkedin.com/in/erika-budiarti/)')
     st.image (img, width = 300)
