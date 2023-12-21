@@ -9,6 +9,6 @@ pip install numpy pandas plotly vscode streamlit
 
 ## Run steamlit app
 ```
-streamlit run Bike_Share.py
+streamlit run Bike_Sharing.py
 ```
 
