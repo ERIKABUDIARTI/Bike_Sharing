@@ -379,5 +379,7 @@ if __name__ == "__main__":
     with col14:
         st.plotly_chart(fig_monetary)
 
+st.snow()
+
 
 
