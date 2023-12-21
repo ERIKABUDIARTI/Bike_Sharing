@@ -2,8 +2,8 @@
 
 ## Setup environment
 ```
-conda create --name Bike_Share python=3.11.5
-conda activate Bike_Share
+conda create --name Bike_Sharing python=3.11.5
+conda activate Bike_Sharing
 pip install numpy pandas babel plotly vscode streamlit
 ```
 
