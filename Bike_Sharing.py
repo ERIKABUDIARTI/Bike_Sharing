@@ -7,7 +7,7 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import plotly.graph_objects as go
 from PIL import Image
-from babel.numbers import format_currency
+#from babel.numbers import format_currency
 
 def background():
     st.set_page_config(layout="wide",
@@ -310,9 +310,9 @@ if __name__ == "__main__":
         st.metric("Maximal Frequency", value=max_frequency)
 
     with col11:
-        min_monetary = format_currency(float(rfm_df.monetary.min()),0, "USD", locale='en_US')
-        avg_monetary = format_currency(float(rfm_df.monetary.mean()),0, "USD", locale='en_US')
-        max_monetary = format_currency(float(rfm_df.monetary.max()),0, "USD", locale='en_US')
+        min_monetary = float(rfm_df.monetary.min(),0)
+        avg_monetary = float(rfm_df.monetary.mean(),0)
+        max_monetary = float(rfm_df.monetary.max(),0)
         st.metric("Minimal Monetary", value=min_monetary)
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
