@@ -7,7 +7,6 @@ import plotly.figure_factory as ff
 import plotly.express as px
 import plotly.graph_objects as go
 from PIL import Image
-#from babel.numbers import format_currency
 
 def background():
     st.set_page_config(layout="wide",
