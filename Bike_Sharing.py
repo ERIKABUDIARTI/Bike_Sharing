@@ -310,9 +310,9 @@ if __name__ == "__main__":
         st.metric("Maximal Frequency", value=max_frequency)
 
     with col11:
-        min_monetary = float(rfm_df.monetary.min(),0)
-        avg_monetary = float(rfm_df.monetary.mean(),0)
-        max_monetary = float(rfm_df.monetary.max(),0)
+        min_monetary = round(rfm_df.monetary.min(),0)
+        avg_monetary = round(rfm_df.monetary.mean(),0)
+        max_monetary = round(rfm_df.monetary.max(),0)
         st.metric("Minimal Monetary", value=min_monetary)
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
