@@ -340,7 +340,7 @@ if __name__ == "__main__":
         marker=dict(
             color=rfm_df['monetary'],
             colorbar=dict(title='Monetary'),
-            colorscale='Purples',)),)
+            colorscale='bupu',)),)
         
     fig_recency.update_layout(
         title='Recency Analysis',
