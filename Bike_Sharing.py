@@ -149,7 +149,7 @@ def season_rent(bike_df):
                  color='season',
                  facet_col = 'yr',
                  labels={'yr': 'Year', 'cnt': 'Total Rent'}, 
-                 color_discrete_map={'Spring': '#F47C7C', 'Summer': '#F7F48B', 'Fall': '#A1DE93', 'Winter': '#70A1D7'})
+                 color_discrete_map={'Spring': '#FFC3A1', 'Summer': '#F0997D', 'Fall': '#D3756B', 'Winter': '#A75D5D'})
     fig4.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig4.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig4.update_layout(title='Total Rent of Each Season',title_font=dict(size=30))
