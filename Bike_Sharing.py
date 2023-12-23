@@ -324,7 +324,7 @@ if __name__ == "__main__":
         marker=dict(
             color=rfm_df['recency'],
             colorbar=dict(title='Recency'),
-            colorscale='Reds')),)
+            colorscale='Oranges')),)
         
     fig_frequency = go.Figure(go.Bar(
         x=rfm_df['weekday'], 
@@ -340,7 +340,7 @@ if __name__ == "__main__":
         marker=dict(
             color=rfm_df['monetary'],
             colorbar=dict(title='Monetary'),
-            colorscale='Blues',)),)
+            colorscale='Purples',)),)
         
     fig_recency.update_layout(
         title='Recency Analysis',
