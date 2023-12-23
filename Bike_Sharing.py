@@ -324,7 +324,7 @@ if __name__ == "__main__":
         marker=dict(
             color=rfm_df['recency'],
             colorbar=dict(title='Recency'),
-            colorscale='bluyl')),)
+            colorscale='ice')),)
         
     fig_frequency = go.Figure(go.Bar(
         x=rfm_df['weekday'], 
@@ -332,7 +332,7 @@ if __name__ == "__main__":
         marker=dict(
             color=rfm_df['frequency'],
             colorbar=dict(title='Frequency'),
-            colorscale='reds',)),)
+            colorscale='ice',)),)
         
     fig_monetary = go.Figure(go.Bar(
         x=rfm_df['weekday'], 
