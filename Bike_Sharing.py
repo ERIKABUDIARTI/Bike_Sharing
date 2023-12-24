@@ -180,7 +180,7 @@ def weather_rent(bike_df):
                    y='cnt', 
                    color='weathersit', 
                    title='Total Rent of Different Weather',
-                   color_discrete_map={'Clear or Partly Cloudy': 'blue', 'Misty or Few Clouds': 'green', 'Light Snow or Light Rain': 'purple', 'Heavy Rain or Ice Pallets': 'red'})
+                   color_discrete_map={'Clear or Partly Cloudy': '#4CB9E7', 'Misty or Few Clouds': '#A8DF8E', 'Light Snow or Light Rain': '#B15EFF', 'Heavy Rain or Ice Pallets': '#FE0000'})
     fig5.update_xaxes(title_text='Hour')
     fig5.update_yaxes(title_text='Total Rent')
     fig5.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
@@ -209,7 +209,7 @@ def weekday_rent(bike_df):
                    y='cnt', 
                    color='weekday', 
                    title='Total Rent of Weekday',
-                   color_discrete_map={'Sunday': 'blue', 'Monday': 'green', 'Tuesday': 'purple', 'Wednesday': 'orange', 'Thursday': 'red', 'Friday': 'pink', 'Saturday': 'brown'})
+                   color_discrete_map={'Sunday': '#4CB9E7', 'Monday': '#A8DF8E', 'Tuesday': '#B15EFF', 'Wednesday': '#FFB534', 'Thursday': '#FE0000', 'Friday': '#FF90BC', 'Saturday': '#C08261'})
     fig6.update_xaxes(title_text='Hour')
     fig6.update_yaxes(title_text='Total Rent')
     fig6.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
