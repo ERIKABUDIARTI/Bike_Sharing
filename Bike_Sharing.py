@@ -180,7 +180,7 @@ def weather_rent(bike_df):
                    y='cnt', 
                    color='weathersit', 
                    title='Total Rent of Different Weather',
-                   color_discrete_map={'Clear or Partly Cloudy': '#DA0C81', 'Misty or Few Clouds': '#FF4B91', 'Light Snow or Light Rain': '#FF90C2', 'Heavy Rain or Ice Pallets': '#FFC7EA'})
+                   color_discrete_map={'Clear or Partly Cloudy': 'blue', 'Misty or Few Clouds': 'green', 'Light Snow or Light Rain': 'purple', 'Heavy Rain or Ice Pallets': 'red'})
     fig5.update_xaxes(title_text='Hour')
     fig5.update_yaxes(title_text='Total Rent')
     fig5.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
