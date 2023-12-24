@@ -120,7 +120,7 @@ def holiday_rent(bike_df):
                  color='category',
                  facet_col = 'yr',
                  labels={'yr': 'Year', 'cnt': 'Total Rent'}, 
-                 color_discrete_map={'Holiday': '#A084E8', 'Workingday': '#A084E8'})
+                 color_discrete_map={'Holiday': '#9288F8', 'Workingday': '#8062D6'})
     fig3.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig3.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig3.update_layout(title='Total Rent of Holiday vs Workingday',title_font=dict(size=30))
