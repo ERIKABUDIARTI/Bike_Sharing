@@ -204,7 +204,12 @@ def weekday_rent(bike_df):
         5: 'Friday',
         6: 'Saturday'
     })
-    fig6 = px.line(bike_df, x='hr', y='cnt', color='weekday', title='Total Rent of Weekday')
+    fig6 = px.line(bike_df, 
+                   x='hr', 
+                   y='cnt', 
+                   color='weekday', 
+                   title='Total Rent of Weekday',
+                   color_discrete_map={'Sunday': 'blue', 'Monday': 'green', 'Tuesday': 'purple', 'Wednesday': 'orange', 'Thursday': 'red', 'Friday': 'pink', 'Saturday': 'brown'})
     fig6.update_xaxes(title_text='Hour')
     fig6.update_yaxes(title_text='Total Rent')
     fig6.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
