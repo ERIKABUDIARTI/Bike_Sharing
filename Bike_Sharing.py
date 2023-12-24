@@ -212,7 +212,7 @@ def weekday_rent(bike_df):
                    color_discrete_map={'Sunday': '#4CB9E7', 'Monday': '#A8DF8E', 'Tuesday': '#B15EFF', 'Wednesday': '#FFB72B', 'Thursday': '#FE0000', 'Friday': '#FFABE1', 'Saturday': '#B3541E'})
     fig6.update_xaxes(title_text='Hour')
     fig6.update_yaxes(title_text='Total Rent')
-    fig6.update_yaxes(range=[0, 5000], autorange=True)
+    fig6.update_yaxes(range=[0, 60000, 5000], autorange=True)
     fig6.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig6.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig6.update_layout(title='Total Rent of Each Day',title_font=dict(size=30))
