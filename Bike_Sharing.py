@@ -290,9 +290,11 @@ def rfm_analysis(day_df):
     recent_date = pd.to_datetime(day_df["dteday"]).dt.date.max()
     rfm_df["recency"] = rfm_df["max_order_timestamp"].apply(lambda x: (recent_date - x).days)
     rfm_df.drop("max_order_timestamp", axis=1, inplace=True)
-    rfm_df = rfm_df[["weekday", "recency", "frequency", "monetary"]].sort_values(by="recency", ascending=True)
+    rfm_df = rfm_df[["weekday", "recency", "frequency", "monetary"]]
+    weekday_order = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+    rfm_df['weekday'] = pd.Categorical(rfm_df['weekday'], categories=weekday_order, ordered=True)
+    rfm_df = rfm_df.sort_values('weekday')
     rfm_df.reset_index(drop=True, inplace=True)
-
     return rfm_df
 
 
