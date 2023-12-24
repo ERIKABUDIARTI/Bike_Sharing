@@ -175,7 +175,12 @@ def weather_rent(bike_df):
         3: 'Light Snow or Light Rain',
         4: 'Heavy Rain or Ice Pallets'
     }) 
-    fig5 = px.line(bike_df, x='hr', y='cnt', color='weathersit', title='Total Rent of Different Weather')
+    fig5 = px.line(bike_df, 
+                   x='hr', 
+                   y='cnt', 
+                   color='weathersit', 
+                   title='Total Rent of Different Weather',
+                   color_discrete_map={'Clear or Partly Cloudy': '#DA0C81', 'Misty or Few Clouds': '#FF4B91', 'Light Snow or Light Rain': '#FF90C2', 'Heavy Rain or Ice Pallets': '#FFC7EA'})
     fig5.update_xaxes(title_text='Hour')
     fig5.update_yaxes(title_text='Total Rent')
     fig5.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
