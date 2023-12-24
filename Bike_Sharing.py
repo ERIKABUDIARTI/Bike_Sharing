@@ -183,7 +183,7 @@ def weather_rent(bike_df):
                    color_discrete_map={'Clear or Partly Cloudy': '#4CB9E7', 'Misty or Few Clouds': '#A8DF8E', 'Light Snow or Light Rain': '#B15EFF', 'Heavy Rain or Ice Pallets': '#FE0000'})
     fig5.update_xaxes(title_text='Hour')
     fig5.update_yaxes(title_text='Total Rent')
-    fig5.update_yaxes(range=[0, 300000], dtick=50000, autorange=False)
+    fig5.update_yaxes(range=[0, 275000], dtick=25000, autorange=False)
     fig5.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig5.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig5.update_layout(title='Total Rent of Different Weather',title_font=dict(size=30))
