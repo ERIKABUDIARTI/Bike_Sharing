@@ -125,7 +125,7 @@ def holiday_rent(bike_df):
     fig3.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig3.update_layout(title='Total Rent of Holiday vs Workingday',title_font=dict(size=30))
     fig3.update_yaxes(range=[0, 2250000], dtick=250000, autorange=False)
-    fig3.update_layout(showlegend=False)
+    fig3.update_layout(showlegend=True)
     fig3.update_layout(width=600, height=600)
     return fig3
 
@@ -155,7 +155,7 @@ def season_rent(bike_df):
     fig4.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig4.update_layout(title='Total Rent of Each Season',title_font=dict(size=30))
     fig4.update_yaxes(range=[0, 650000], dtick=50000, autorange=False)
-    fig4.update_layout(showlegend=False)
+    fig4.update_layout(showlegend=True)
     fig4.update_layout(width=600, height=600)
     return fig4
 
