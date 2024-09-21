@@ -251,25 +251,25 @@ if __name__ == "__main__":
     col7, col8, col9 = st.columns(3)
 
     with col7:
-        min_recency = round(rfm_df.recency.min(),0)
-        avg_recency = round(rfm_df.recency.mean(),0)
-        max_recency = round(rfm_df.recency.max(),0)
+        min_recency = round(rfm_df.Recency.min(),0)
+        avg_recency = round(rfm_df.Recency.mean(),0)
+        max_recency = round(rfm_df.Recency.max(),0)
         st.metric("Minimal Recency", value=min_recency)
         st.metric("Average Recency", value=avg_recency)
         st.metric("Maximal Recency", value=max_recency)
 
     with col8:
-        min_frequency = round(rfm_df.frequency.min(),0)
-        avg_frequency = round(rfm_df.frequency.mean(),0)
-        max_frequency = round(rfm_df.frequency.max(),0)
+        min_frequency = round(rfm_df.Frequency.min(),0)
+        avg_frequency = round(rfm_df.Frequency.mean(),0)
+        max_frequency = round(rfm_df.Frequency.max(),0)
         st.metric("Minimal Frequency", value=min_frequency)
         st.metric("Average Frequency", value=avg_frequency)
         st.metric("Maximal Frequency", value=max_frequency)
 
     with col9:
-        min_monetary = round(rfm_df.monetary.min(),0)
-        avg_monetary = round(rfm_df.monetary.mean(),0)
-        max_monetary = round(rfm_df.monetary.max(),0)
+        min_monetary = round(rfm_df.Monetary.min(),0)
+        avg_monetary = round(rfm_df.Monetary.mean(),0)
+        max_monetary = round(rfm_df.Monetary.max(),0)
         st.metric("Minimal Monetary", value=min_monetary)
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
@@ -278,7 +278,7 @@ if __name__ == "__main__":
 
     fig_recency = go.Figure(go.Bar(
         x=rfm_df['weekday'], 
-        y=rfm_df['recency'], 
+        y=rfm_df['Recency'], 
         marker=dict(
             color='red'
         )
@@ -286,7 +286,7 @@ if __name__ == "__main__":
         
     fig_frequency = go.Figure(go.Bar(
         x=rfm_df['weekday'], 
-        y=rfm_df['frequency'], 
+        y=rfm_df['Frequency'], 
         marker=dict(
             color='green'
         )
@@ -294,7 +294,7 @@ if __name__ == "__main__":
         
     fig_monetary = go.Figure(go.Bar(
         x=rfm_df['weekday'], 
-        y=rfm_df['monetary'], 
+        y=rfm_df['Monetary'], 
         marker=dict(
             color='blue'
         )
