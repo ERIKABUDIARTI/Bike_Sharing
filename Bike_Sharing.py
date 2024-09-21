@@ -219,31 +219,27 @@ def main():
     weekday_rent(bike_df)
 
 
-def rfm_analysis(day_df):
-    day_change = {0: 'sunday', 1: 'monday', 2: 'tuesday', 3: 'wednesday', 4: 'thursday', 5: 'friday', 6: 'saturday'}
-    day_df["weekday"] = day_df["weekday"].map(day_change)
-    rfm_df = day_df.groupby(by="weekday", as_index=False).agg({
-        "dteday": "max",
-        "instant": "count",
-        "cnt": "sum"
+def rfm_analysis(bike_df):
+    bike_df.groupby(by="hr").agg({
+    "cnt": ["sum"]
     })
+    current_date = max(hour_df['dteday'])
+    
+    rfm_df = bike_df.groupby('registered').agg({
+        'dteday': lambda x: (current_date - x.max()).days,  # Recency
+        'instant': 'count',  # Frequency
+        'cnt': 'sum'  # Monetary
+    }).reset_index()
 
-    rfm_df.columns = ["weekday", "max_order_timestamp", "frequency", "monetary"]
-    rfm_df["max_order_timestamp"] = pd.to_datetime(rfm_df["max_order_timestamp"]).dt.date
-    recent_date = pd.to_datetime(day_df["dteday"]).dt.date.max()
-    rfm_df["recency"] = rfm_df["max_order_timestamp"].apply(lambda x: (recent_date - x).days)
-    rfm_df.drop("max_order_timestamp", axis=1, inplace=True)
-    rfm_df = rfm_df[["weekday", "recency", "frequency", "monetary"]].sort_values(by="recency", ascending=True)
-    rfm_df.reset_index(drop=True, inplace=True)
-
+    rfm_df.columns = ['registered', 'Recency', 'Frequency', 'Monetary']
     return rfm_df
 
 
 if __name__ == "__main__":
     main()
 
-    day_df = read_data('day.csv')
-    rfm_df = rfm_analysis(day_df)
+    bike_df = read_data('bike.csv')
+    rfm_df = rfm_analysis(bike_df)
 
     # Display RFM Analysis
     st.markdown("<h2 style='text-align: center;'>RFM Analysis</h2>", unsafe_allow_html=True)
