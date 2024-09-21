@@ -275,31 +275,35 @@ if __name__ == "__main__":
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
 
-    # Create a figure with subplots (1 row, 3 columns)
+    
+    col10, col11, col12 = st.columns(3)
     fig, axes = plt.subplots(1, 3, figsize=(18, 6))
 
     # Plot Recency
-    sns.histplot(rfm_df['Recency'], bins=30, kde=True, ax=axes[0], color='blue')
-    axes[0].set_title('Recency Distribution')
-    axes[0].set_xlabel('Recency')
-    axes[0].set_ylabel('Count')
+    with col10:
+        sns.histplot(rfm_df['Recency'], bins=30, kde=True, ax=axes[0], color='blue')
+        axes[0].set_title('Recency Distribution')
+        axes[0].set_xlabel('Recency')
+        axes[0].set_ylabel('Count')
+        plt.tight_layout()
+        st.pyplot(fig)
     
     # Plot Frequency
-    sns.histplot(rfm_df['Frequency'], bins=30, kde=True, ax=axes[1], color='green')
-    axes[1].set_title('Frequency Distribution')
-    axes[1].set_xlabel('Frequency')
-    axes[1].set_ylabel('Count')
+    with col11:
+        sns.histplot(rfm_df['Frequency'], bins=30, kde=True, ax=axes[1], color='green')
+        axes[1].set_title('Frequency Distribution')
+        axes[1].set_xlabel('Frequency')
+        axes[1].set_ylabel('Count')
+        plt.tight_layout()
+        st.pyplot(fig)
     
     # Plot Monetary
-    sns.histplot(rfm_df['Monetary'], bins=30, kde=True, ax=axes[2], color='red')
-    axes[2].set_title('Monetary Distribution')
-    axes[2].set_xlabel('Monetary')
-    axes[2].set_ylabel('Count')
+    with col12:             
+        sns.histplot(rfm_df['Monetary'], bins=30, kde=True, ax=axes[2], color='red')
+        axes[2].set_title('Monetary Distribution')
+        axes[2].set_xlabel('Monetary')
+        axes[2].set_ylabel('Count')
+        plt.tight_layout()
+        st.pyplot(fig)         
     
-    # Adjust layout for better spacing
-    plt.tight_layout()
-    
-    # Show the plot
-    st.pyplot(fig)
-
 st.snow()
