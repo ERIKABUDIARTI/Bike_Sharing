@@ -246,12 +246,6 @@ def main():
     weather_rent(bike_df)
     season_rent(bike_df)
 
-if __name__ == "__main__":
-    main()
-    day_df = read_data('day.csv')
-    hour_df = read_data('hour.csv')
-    bike_df = read_data('bike_data.csv')
-    rfm_df = rfm_analysis(bike_df)
 
 def rfm_analysis(bike_df):
     hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
@@ -332,7 +326,12 @@ def rfm_analysis(bike_df):
         ax.set_ylabel('Count')
         st.pyplot(fig)    
 
-
+if __name__ == "__main__":
+    main()
+    day_df = read_data('day.csv')
+    hour_df = read_data('hour.csv')
+    bike_df = read_data('bike_data.csv')
+    rfm_df = rfm_analysis(bike_df)
 
 
 st.snow()
