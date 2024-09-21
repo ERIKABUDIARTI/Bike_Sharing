@@ -114,7 +114,7 @@ with col2:
 
 
 def weather_rent(bike_df):
-    bike_df = bike_df.groupby(['weathersit','mnth']).agg({
+    bike_df = bike_df.groupby(['weathersit','hr']).agg({
         'cnt': 'sum'
     }).reset_index()
     bike_df['weathersit'] = bike_df['weathersit'].map({
@@ -124,12 +124,12 @@ def weather_rent(bike_df):
         4: 'Heavy Rain or Ice Pallets'
     }) 
     fig3 = px.line(bike_df, 
-                   x='mnth', 
+                   x='hr', 
                    y='cnt', 
                    color='weathersit', 
                    title='Total Rent of Different Weather',
                    color_discrete_map={'Clear or Partly Cloudy': '#4CB9E7', 'Misty or Few Clouds': '#A8DF8E', 'Light Snow or Light Rain': '#B15EFF', 'Heavy Rain or Ice Pallets': '#FE0000'})
-    fig3.update_xaxes(title_text='Month')
+    fig3.update_xaxes(title_text='Hour')
     fig3.update_yaxes(title_text='Total Rent')
     fig3.update_yaxes(range=[0, 275000], dtick=25000, autorange=False)
     fig3.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
