@@ -280,7 +280,7 @@ if __name__ == "__main__":
     
     # Plot Recency
     with col10:
-        fig, ax = plt.subplots(figsize=(6, 4))
+        fig, ax = plt.subplots(figsize=(6, 6))
         sns.histplot(rfm_df['Recency'], bins=30, kde=True, ax=ax, color='blue')
         ax.set_title('Recency Distribution')
         ax.set_xlabel('Recency')
@@ -289,7 +289,7 @@ if __name__ == "__main__":
     
     # Plot Frequency
     with col11:
-        fig, ax = plt.subplots(figsize=(6, 4))
+        fig, ax = plt.subplots(figsize=(6, 6))
         sns.histplot(rfm_df['Frequency'], bins=30, kde=True, ax=ax, color='green')
         ax.set_title('Frequency Distribution')
         ax.set_xlabel('Frequency')
@@ -298,7 +298,7 @@ if __name__ == "__main__":
     
     # Plot Monetary
     with col12:
-        fig, ax = plt.subplots(figsize=(6, 4))
+        fig, ax = plt.subplots(figsize=(6, 6))
         sns.histplot(rfm_df['Monetary'], bins=30, kde=True, ax=ax, color='red')
         ax.set_title('Monetary Distribution')
         ax.set_xlabel('Monetary')
