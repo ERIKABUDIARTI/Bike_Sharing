@@ -275,35 +275,34 @@ if __name__ == "__main__":
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
 
-    
+    # Create columns in Streamlit
     col10, col11, col12 = st.columns(3)
-    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
-
+    
     # Plot Recency
     with col10:
-        sns.histplot(rfm_df['Recency'], bins=30, kde=True, ax=axes[0], color='blue')
-        axes[0].set_title('Recency Distribution')
-        axes[0].set_xlabel('Recency')
-        axes[0].set_ylabel('Count')
-        plt.tight_layout()
+        fig, ax = plt.subplots(figsize=(6, 4))
+        sns.histplot(rfm_df['Recency'], bins=30, kde=True, ax=ax, color='blue')
+        ax.set_title('Recency Distribution')
+        ax.set_xlabel('Recency')
+        ax.set_ylabel('Count')
         st.pyplot(fig)
     
     # Plot Frequency
     with col11:
-        sns.histplot(rfm_df['Frequency'], bins=30, kde=True, ax=axes[1], color='green')
-        axes[1].set_title('Frequency Distribution')
-        axes[1].set_xlabel('Frequency')
-        axes[1].set_ylabel('Count')
-        plt.tight_layout()
-        st.pyplot(fig)
+        fig, ax = plt.subplots(figsize=(6, 4))
+        sns.histplot(rfm_df['Frequency'], bins=30, kde=True, ax=ax, color='green')
+        ax.set_title('Frequency Distribution')
+        ax.set_xlabel('Frequency')
+        ax.set_ylabel('Count')
+        st.pyplot(fig) 
     
     # Plot Monetary
-    with col12:             
-        sns.histplot(rfm_df['Monetary'], bins=30, kde=True, ax=axes[2], color='red')
-        axes[2].set_title('Monetary Distribution')
-        axes[2].set_xlabel('Monetary')
-        axes[2].set_ylabel('Count')
-        plt.tight_layout()
-        st.pyplot(fig)         
+    with col12:
+        fig, ax = plt.subplots(figsize=(6, 4))
+        sns.histplot(rfm_df['Monetary'], bins=30, kde=True, ax=ax, color='red')
+        ax.set_title('Monetary Distribution')
+        ax.set_xlabel('Monetary')
+        ax.set_ylabel('Count')
+        st.pyplot(fig)    
     
 st.snow()
