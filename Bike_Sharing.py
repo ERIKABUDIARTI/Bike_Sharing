@@ -275,47 +275,32 @@ if __name__ == "__main__":
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
 
-    # Recency
-    fig_recency = px.histogram(rfm_df, 
-                               x='Recency', 
-                               color_discrete_sequence=['red'])
+    # Create a figure with subplots (1 row, 3 columns)
+    fig, axes = plt.subplots(1, 3, figsize=(18, 6))
+
+    # Plot Recency
+    sns.histplot(rfm_df['Recency'], bins=30, kde=True, ax=axes[0], color='blue')
+    axes[0].set_title('Recency Distribution')
+    axes[0].set_xlabel('Recency')
+    axes[0].set_ylabel('Count')
     
-    # Frequency
-    fig_frequency = px.histogram(rfm_df, 
-                                 x='Frequency', 
-                                 color_discrete_sequence=['green'])
-
-    # Monetary
-    fig_monetary = px.histogram(rfm_df, 
-                                x='Monetary', 
-                                color_discrete_sequence=['blue'])
-        
-    fig_recency.update_layout(
-        title='Recency Analysis',
-        xaxis=dict(title='Recency'),
-        yaxis=dict(title='Count', range=[0, max_recency], autorange=True),
-        showlegend=False,
-        width = 400,
-        height = 600
-    )
-
-    fig_frequency.update_layout(
-        title='Frequency Analysis',
-        xaxis=dict(title='Frequency'),
-        yaxis=dict(title='Count', range=[0, max_frequency], autorange=True),
-        showlegend=False,
-        width = 400, 
-        height = 600
-    )
-
-    fig_monetary.update_layout(
-        title='Monetary Analysis',
-        xaxis=dict(title='Monetary'),
-        yaxis=dict(title='count', range=[0, max_monetary], autorange=True),
-        showlegend=False,
-        width = 400,
-        height = 600
-    )
+    # Plot Frequency
+    sns.histplot(rfm_df['Frequency'], bins=30, kde=True, ax=axes[1], color='green')
+    axes[1].set_title('Frequency Distribution')
+    axes[1].set_xlabel('Frequency')
+    axes[1].set_ylabel('Count')
+    
+    # Plot Monetary
+    sns.histplot(rfm_df['Monetary'], bins=30, kde=True, ax=axes[2], color='red')
+    axes[2].set_title('Monetary Distribution')
+    axes[2].set_xlabel('Monetary')
+    axes[2].set_ylabel('Count')
+    
+    # Adjust layout for better spacing
+    plt.tight_layout()
+    
+    # Show the plot
+    plt.show()
     
     col10, col11, col12 = st.columns(3)
 
