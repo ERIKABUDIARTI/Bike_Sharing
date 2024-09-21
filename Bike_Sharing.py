@@ -313,6 +313,7 @@ if __name__ == "__main__":
         ax.set_title('Recency Distribution')
         ax.set_xlabel('Recency')
         ax.set_ylabel('Count')
+        ax.grid(True)
         st.pyplot(fig)
     
     # Plot Frequency
@@ -322,6 +323,7 @@ if __name__ == "__main__":
         ax.set_title('Frequency Distribution')
         ax.set_xlabel('Frequency')
         ax.set_ylabel('Count')
+        ax.grid(True)
         st.pyplot(fig) 
     
     # Plot Monetary
@@ -331,8 +333,8 @@ if __name__ == "__main__":
         ax.set_title('Monetary Distribution')
         ax.set_xlabel('Monetary')
         ax.set_ylabel('Count')
+        ax.grid(True)
         st.pyplot(fig)    
 
 st.caption(f"Copyright © 2023-2024 All Rights Reserved [ERIKA BUDIARTI](https://www.linkedin.com/in/erika-budiarti/)")
-
 st.snow()
