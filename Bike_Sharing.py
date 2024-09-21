@@ -277,22 +277,19 @@ if __name__ == "__main__":
     # Histogram for Recency
     fig_recency = go.Figure(go.Histogram(
         x=rfm_df['Recency'], 
-        marker=dict(color='red'),
-        xbins=dict(size=1)  # Set the bin size as needed
+        marker=dict(color='red')
     ))
 
     # Histogram for Frequency
     fig_frequency = go.Figure(go.Histogram(
         x=rfm_df['Frequency'], 
-        marker=dict(color='green'),
-        xbins=dict(size=1)  # Set the bin size as needed
+        marker=dict(color='green')
     ))
 
     # Histogram for Monetary
     fig_monetary = go.Figure(go.Histogram(
         x=rfm_df['Monetary'], 
-        marker=dict(color='blue'),
-        xbins=dict(size=1)  # Set the bin size as needed
+        marker=dict(color='blue')
     ))
         
     fig_recency.update_layout(
