@@ -73,17 +73,17 @@ bike_df.resample('M', on='dteday').sum()
 
 # Display Daily Users
 st.markdown("<h2 style='text-align: center;'>Daily Users</h2>", unsafe_allow_html=True)
-col1, col2, col3 = st.columns(3)
+cola, colb, colc = st.columns(3)
  
-with col1:
+with cola:
     total_casual = bike_df.casual.sum()
     st.metric("Total Casual User", value=f'{total_casual:,}')
 
-with col2:
+with colb:
     total_registered = bike_df.registered.sum()
     st.metric("Total Registered User", value=f'{total_registered:,}')
     
-with col3:
+with colc:
     total_users = bike_df.cnt.sum()
     st.metric("Total Users", value=f'{total_users:,}')
 
