@@ -220,6 +220,9 @@ def main():
 
 
 def rfm_analysis(bike_df):
+    hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
+    bike_df['dteday'] = pd.to_datetime(bike_df['dteday'])
+
     bike_df.groupby(by="hr").agg({
     "cnt": ["sum"]
     })
