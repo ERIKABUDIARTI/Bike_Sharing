@@ -85,11 +85,10 @@ with col3:
     total_users = bike_df.cnt.sum()
     st.metric("Total Users", value=f'{total_users:,}')
 
-fig, ax = plt.subplots(figsize=(8, 6))
+fig, ax = plt.subplots(figsize=(6, 4))
 ax.plot(bike_df['dteday'], bike_df['cnt'], color='#90CAF9')
 ax.set_title('Number of Users')
 ax.set_xticklabels(bike_df['dteday'], rotation=45)
-ax.grid(True)
 plt.tight_layout()
 st.pyplot(fig)
 
