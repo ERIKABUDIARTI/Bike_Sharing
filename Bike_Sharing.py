@@ -69,6 +69,7 @@ def read_data(csv):
 
 bike_df = read_data("bike_data.csv")
 bike_df['dteday'] = pd.to_datetime(bike_df['dteday']).dt.date
+bike_df.resample('M', on='dteday').sum()
 
 # Display Daily Users
 st.markdown("<h2 style='text-align: center;'>Daily Users</h2>", unsafe_allow_html=True)
