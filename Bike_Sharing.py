@@ -68,6 +68,25 @@ def read_data(csv):
 
 bike_df = read_data("bike_data.csv")
 
+# Display Daily Users
+st.markdown("<h2 style='text-align: center;'>Daily Users</h2>", unsafe_allow_html=True)
+col1, col2, col3 = st.columns(3)
+ 
+with col1:
+    total_casual = bike_df.casual.sum()
+    st.metric("Total Casual User", value=f'{total_casual:,}')
+
+with col2:
+    total_registered = bike_df.registered.sum()
+    st.metric("Total Registered User", value=f'{total_registered:,}')
+    
+with col3:
+    total_users = bike_df.cnt.sum()
+    st.metric("Total Users", value=f'{total_users:,}')
+
+
+
+
 def total_hourly_rent(bike_df):
     start_hour = 0
     end_hour = 23
