@@ -239,6 +239,7 @@ with col5:
 with col6:
     st.plotly_chart(heatmap_fig)
 
+
 def main():
     bike_df = read_data('bike_data.csv')
     total_hourly_rent(bike_df)
@@ -266,6 +267,12 @@ def rfm_analysis(bike_df):
     return rfm_df
 
 
+if __name__ == "__main__":
+    main()
+    day_df = read_data('day.csv')
+    hour_df = read_data('hour.csv')
+    bike_df = read_data('bike_data.csv')
+    rfm_df = rfm_analysis(bike_df)
 
 
     # Display RFM Analysis
@@ -326,12 +333,6 @@ def rfm_analysis(bike_df):
         ax.set_ylabel('Count')
         st.pyplot(fig)    
 
-if __name__ == "__main__":
-    main()
-    day_df = read_data('day.csv')
-    hour_df = read_data('hour.csv')
-    bike_df = read_data('bike_data.csv')
-    rfm_df = rfm_analysis(bike_df)
-
+st.caption(f"Copyright © 2023-2024 All Rights Reserved [ERIKA BUDIARTI](https://www.linkedin.com/in/erika-budiarti/)")
 
 st.snow()
