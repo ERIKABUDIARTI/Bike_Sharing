@@ -6,6 +6,7 @@ import pandas as pd
 import plotly.figure_factory as ff
 import plotly.express as px
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
 from PIL import Image
 
 import warnings
@@ -275,14 +276,14 @@ if __name__ == "__main__":
         st.metric("Maximal Monetary", value=max_monetary)
 
     # Recency
-    fig_recency = px.density_contour(rfm_df, 
-                                     x='Recency', 
-                                     color_discrete_sequence=['red'])
+    fig_recency = px.histogram(rfm_df, 
+                               x='Recency', 
+                               color_discrete_sequence=['red'])
     
     # Frequency
-    fig_frequency = px.density_contour(rfm_df, 
-                                       x='Frequency', 
-                                       color_discrete_sequence=['green'])
+    fig_frequency = px.histogram(rfm_df, 
+                                 x='Frequency', 
+                                 color_discrete_sequence=['green'])
 
     # Monetary
     fig_monetary = px.density_contour(rfm_df, 
