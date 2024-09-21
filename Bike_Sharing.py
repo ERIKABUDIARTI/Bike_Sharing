@@ -300,6 +300,6 @@ if __name__ == "__main__":
     plt.tight_layout()
     
     # Show the plot
-    plt.show()
+    st.pyplot(fig)
 
 st.snow()
