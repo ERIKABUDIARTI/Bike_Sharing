@@ -70,7 +70,7 @@ bike_df = read_data("bike_data.csv")
 bike_df['dteday'] = pd.to_datetime(bike_df['dteday']).dt.date
 
 # Display Daily Users
-st.markdown("<h2 style='text-align: center;'>Daily Users</h2>", unsafe_allow_html=True)
+st.subheader("Daily Users")
 col1, col2, col3 = st.columns(3)
  
 with col1:
