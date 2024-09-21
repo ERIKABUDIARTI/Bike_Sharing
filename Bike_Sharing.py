@@ -240,12 +240,7 @@ with col6:
     st.plotly_chart(heatmap_fig)
 
 
-def main():
-    bike_df = read_data('bike_data.csv')
-    total_hourly_rent(bike_df)
-    total_monthly_rent(bike_df)
-    weather_rent(bike_df)
-    season_rent(bike_df)
+
 
 
 def rfm_analysis(bike_df):
@@ -267,13 +262,7 @@ def rfm_analysis(bike_df):
     return rfm_df
 
 
-if __name__ == "__main__":
-    main()
 
-    day_df = read_data('day.csv')
-    hour_df = read_data('hour.csv')
-    bike_df = read_data('bike_data.csv')
-    rfm_df = rfm_analysis(bike_df)
 
     # Display RFM Analysis
     st.markdown("<h2 style='text-align: center;'>RFM Analysis</h2>", unsafe_allow_html=True)
@@ -332,5 +321,22 @@ if __name__ == "__main__":
         ax.set_xlabel('Monetary')
         ax.set_ylabel('Count')
         st.pyplot(fig)    
-    
+
+def main():
+    day_df = read_data('day.csv')
+    hour_df = read_data('hour.csv')
+    bike_df = read_data('bike_data.csv')
+    total_hourly_rent(bike_df)
+    total_monthly_rent(bike_df)
+    weather_rent(bike_df)
+    season_rent(bike_df)
+
+if __name__ == "__main__":
+    main()
+    #day_df = read_data('day.csv')
+    #hour_df = read_data('hour.csv')
+    #bike_df = read_data('bike_data.csv')
+    rfm_df = rfm_analysis(bike_df)
+
+
 st.snow()
