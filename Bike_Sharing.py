@@ -274,30 +274,25 @@ if __name__ == "__main__":
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
 
-    fig = go.Figure()
-
-    fig_recency = go.Figure(go.Bar(
+    # Histogram for Recency
+    fig_recency = go.Figure(go.Histogram(
         x=rfm_df['Recency'], 
-        y=rfm_df['registered'], 
-        marker=dict(
-            color='red'
-        )
+        marker=dict(color='red'),
+        xbins=dict(size=1)  # Set the bin size as needed
     ))
-        
-    fig_frequency = go.Figure(go.Bar(
+
+    # Histogram for Frequency
+    fig_frequency = go.Figure(go.Histogram(
         x=rfm_df['Frequency'], 
-        y=rfm_df['registered'], 
-        marker=dict(
-            color='green'
-        )
+        marker=dict(color='green'),
+        xbins=dict(size=1)  # Set the bin size as needed
     ))
-        
-    fig_monetary = go.Figure(go.Bar(
+
+    # Histogram for Monetary
+    fig_monetary = go.Figure(go.Histogram(
         x=rfm_df['Monetary'], 
-        y=rfm_df['registered'], 
-        marker=dict(
-            color='blue'
-        )
+        marker=dict(color='blue'),
+        xbins=dict(size=1)  # Set the bin size as needed
     ))
         
     fig_recency.update_layout(
