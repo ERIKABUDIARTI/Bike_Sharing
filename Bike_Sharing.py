@@ -85,10 +85,13 @@ with col3:
     total_users = bike_df.cnt.sum()
     st.metric("Total Users", value=f'{total_users:,}')
 
-fig, ax = plt.subplots(figsize=(6, 4))
-ax.plot(bike_df['dteday'], bike_df['cnt'], color='#90CAF9')
-ax.set_title('Number of Users')
-ax.set_xticklabels(bike_df['dteday'], rotation=45)
+fig, ax = plt.subplots(figsize=(8, 6))
+sns.lineplot(data=bike_df, x='dteday', y='cnt', ax=ax, color='#90CAF9')
+ax.set_title('Number of Users')  # Add a title to the plot
+ax.set_xlabel('Date')  # Set the label for the x-axis
+ax.set_ylabel('User Count')  # Set the label for the y-axis
+plt.xticks(rotation=45)  # Rotate x-axis labels for better readability
+ax.grid(True)
 plt.tight_layout()
 st.pyplot(fig)
 
