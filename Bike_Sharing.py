@@ -301,14 +301,5 @@ if __name__ == "__main__":
     
     # Show the plot
     plt.show()
-    
-    col10, col11, col12 = st.columns(3)
-
-    with col10:
-        st.plotly_chart(fig_recency)
-    with col11:
-        st.plotly_chart(fig_frequency)
-    with col12:
-        st.plotly_chart(fig_monetary)
 
 st.snow()
