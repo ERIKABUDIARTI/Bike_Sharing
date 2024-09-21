@@ -303,7 +303,7 @@ if __name__ == "__main__":
     fig_recency.update_layout(
         title='Recency Analysis',
         xaxis=dict(title='Recency'),
-        yaxis=dict(title='Count', range=[0, max_recency], dtick=1, autorange=True),
+        yaxis=dict(title='Count', range=[0, max_recency], dtick=50, autorange=True),
         showlegend=False,
         width = 400,
         height = 600
@@ -312,7 +312,7 @@ if __name__ == "__main__":
     fig_frequency.update_layout(
         title='Frequency Analysis',
         xaxis=dict(title='Frequency'),
-        yaxis=dict(title='Count', range=[0, max_frequency], dtick=10, autorange=True),
+        yaxis=dict(title='Count', range=[0, max_frequency], dtick=50, autorange=True),
         showlegend=False,
         width = 400, 
         height = 600
@@ -321,7 +321,7 @@ if __name__ == "__main__":
     fig_monetary.update_layout(
         title='Monetary Analysis',
         xaxis=dict(title='Monetary'),
-        yaxis=dict(title='count', range=[0, max_monetary], dtick=100000, autorange=True),
+        yaxis=dict(title='count', range=[0, max_monetary], dtick=1000, autorange=True),
         showlegend=False,
         width = 400,
         height = 600
