@@ -67,7 +67,7 @@ def read_data(csv):
     return bike_df
 
 bike_df = read_data("bike_data.csv")
-bike_df['dteday'] = pd.to_datetime(bike_df['dteday'])
+bike_df['dteday'] = pd.to_datetime(bike_df['dteday']).dt.date
 
 # Display Daily Users
 st.markdown("<h2 style='text-align: center;'>Daily Users</h2>", unsafe_allow_html=True)
