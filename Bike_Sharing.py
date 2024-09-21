@@ -85,15 +85,13 @@ with col3:
     total_users = bike_df.cnt.sum()
     st.metric("Total Users", value=f'{total_users:,}')
 
-plt.figure(figsize=(10, 6))
-plt.plot(bike_df['dteday'], bike_df['cnt'], color='#90CAF9')
-plt.xlabel(None)
-plt.ylabel(None)
-plt.title('Number of Users')
-plt.xticks(rotation=45)
-plt.grid(True)
+fig, ax = plt.subplots(figsize=(8, 6))
+ax.plot(bike_df['dteday'], bike_df['cnt'], color='#90CAF9')
+ax.set_title('Number of Users')
+ax.set_xticklabels(bike_df['dteday'], rotation=45)
+ax.grid(True)
 plt.tight_layout()
-st.pyplot(plt)
+st.pyplot(fig)
 
 
 def total_hourly_rent(bike_df):
