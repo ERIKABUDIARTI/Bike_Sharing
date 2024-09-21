@@ -85,7 +85,7 @@ with col3:
     st.metric("Total Users", value=f'{total_users:,}')
 
 plt.figure(figsize=(10, 6))
-plt.plot(bike_df.index, bike_df['cnt'], color='#90CAF9')
+plt.plot(bike_df['dteday'], bike_df['cnt'], color='#90CAF9')
 plt.title('Number of Users')
 plt.xticks(rotation=45)
 plt.grid(True)
