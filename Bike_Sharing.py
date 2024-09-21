@@ -140,31 +140,28 @@ def weather_rent(bike_df):
     return fig3
     
 
-def weekday_rent(bike_df):
-    bike_df = bike_df.groupby(['weekday','hr']).agg({
+def season_rent(bike_df):
+    bike_df = bike_df.groupby(['season','hr']).agg({
         'cnt': 'sum'
     }).reset_index()
-    bike_df['weekday'] = bike_df['weekday'].map({
-        0: 'Sunday',
-        1: 'Monday',
-        2: 'Tuesday',
-        3: 'Wednesday',
-        4: 'Thursday',
-        5: 'Friday',
-        6: 'Saturday'
+    bike_df['season'] = bike_df['season'].map({
+        1: 'Spring',
+        2: 'Summer',
+        3: 'Fall',
+        4: 'Winter'
     })
     fig4 = px.line(bike_df, 
                    x='hr', 
                    y='cnt', 
-                   color='weekday', 
+                   color='season', 
                    title='Total Rent of Weekday',
-                   color_discrete_map={'Sunday': '#4CB9E7', 'Monday': '#A8DF8E', 'Tuesday': '#B15EFF', 'Wednesday': '#FFB72B', 'Thursday': '#FE0000', 'Friday': '#FFABE1', 'Saturday': '#B3541E'})
+                   color_discrete_map={'Spring': '#4CB9E7', 'Summer': '#A8DF8E', 'Fall': '#B15EFF', 'Winter': '#FE0000'})
     fig4.update_xaxes(title_text='Hour')
     fig4.update_yaxes(title_text='Total Rent')
     fig4.update_yaxes(range=[0, 60000], dtick=5000, autorange=False)
     fig4.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig4.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
-    fig4.update_layout(title='Total Rent of Each Day',title_font=dict(size=30))
+    fig4.update_layout(title='Total Rent of Different Season',title_font=dict(size=30))
     fig4.update_layout(width=600, height=600)
     fig4.update_layout(legend_title_text='WeekDay')
     return fig4
@@ -175,7 +172,7 @@ with col3:
     st.plotly_chart(weather_rent(bike_df))
 
 with col4:
-    st.plotly_chart(weekday_rent(bike_df))
+    st.plotly_chart(season_rent(bike_df))
 
 
 correlation_matrix = bike_df.corr(numeric_only=True)
@@ -217,7 +214,7 @@ def main():
     total_hourly_rent(bike_df)
     total_monthly_rent(bike_df)
     weather_rent(bike_df)
-    weekday_rent(bike_df)
+    season_rent(bike_df)
 
 
 def rfm_analysis(bike_df):
