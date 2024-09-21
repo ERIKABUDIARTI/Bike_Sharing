@@ -278,7 +278,7 @@ if __name__ == "__main__":
 
     fig_recency = go.Figure(go.Bar(
         x=rfm_df['Recency'], 
-        y=rfm_df['cnt'], 
+        y=rfm_df['registered'], 
         marker=dict(
             color='red'
         )
@@ -286,7 +286,7 @@ if __name__ == "__main__":
         
     fig_frequency = go.Figure(go.Bar(
         x=rfm_df['Frequency'], 
-        y=rfm_df['cnt'], 
+        y=rfm_df['registered'], 
         marker=dict(
             color='green'
         )
@@ -294,7 +294,7 @@ if __name__ == "__main__":
         
     fig_monetary = go.Figure(go.Bar(
         x=rfm_df['Monetary'], 
-        y=rfm_df['cnt'], 
+        y=rfm_df['registered'], 
         marker=dict(
             color='blue'
         )
