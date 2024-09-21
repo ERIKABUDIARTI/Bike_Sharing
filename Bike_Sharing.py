@@ -240,8 +240,6 @@ with col6:
     st.plotly_chart(heatmap_fig)
 
 def main():
-    day_df = read_data('day.csv')
-    hour_df = read_data('hour.csv')
     bike_df = read_data('bike_data.csv')
     total_hourly_rent(bike_df)
     total_monthly_rent(bike_df)
@@ -250,9 +248,9 @@ def main():
 
 if __name__ == "__main__":
     main()
-    #day_df = read_data('day.csv')
-    #hour_df = read_data('hour.csv')
-    #bike_df = read_data('bike_data.csv')
+    day_df = read_data('day.csv')
+    hour_df = read_data('hour.csv')
+    bike_df = read_data('bike_data.csv')
     rfm_df = rfm_analysis(bike_df)
 
 def rfm_analysis(bike_df):
