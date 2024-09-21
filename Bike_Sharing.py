@@ -86,6 +86,8 @@ with col3:
 
 plt.figure(figsize=(10, 6))
 plt.plot(bike_df['dteday'], bike_df['cnt'], color='#90CAF9')
+plt.xlabel(None)
+plt.ylabel(None)
 plt.title('Number of Users')
 plt.xticks(rotation=45)
 plt.grid(True)
