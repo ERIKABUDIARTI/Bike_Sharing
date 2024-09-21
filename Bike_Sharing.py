@@ -277,24 +277,24 @@ if __name__ == "__main__":
     fig = go.Figure()
 
     fig_recency = go.Figure(go.Bar(
-        x=rfm_df['weekday'], 
-        y=rfm_df['Recency'], 
+        x=rfm_df['Recency'], 
+        y=rfm_df['cnt'], 
         marker=dict(
             color='red'
         )
     ))
         
     fig_frequency = go.Figure(go.Bar(
-        x=rfm_df['weekday'], 
-        y=rfm_df['Frequency'], 
+        x=rfm_df['Frequency'], 
+        y=rfm_df['cnt'], 
         marker=dict(
             color='green'
         )
     ))
         
     fig_monetary = go.Figure(go.Bar(
-        x=rfm_df['weekday'], 
-        y=rfm_df['Monetary'], 
+        x=rfm_df['Monetary'], 
+        y=rfm_df['cnt'], 
         marker=dict(
             color='blue'
         )
@@ -302,8 +302,8 @@ if __name__ == "__main__":
         
     fig_recency.update_layout(
         title='Recency Analysis',
-        xaxis=dict(title='Weekday'),
-        yaxis=dict(title='Recency', range=[0, max_recency], dtick=1, autorange=True),
+        xaxis=dict(title='Recency'),
+        yaxis=dict(title='Count', range=[0, max_recency], dtick=1, autorange=True),
         showlegend=False,
         width = 400,
         height = 600
@@ -311,8 +311,8 @@ if __name__ == "__main__":
 
     fig_frequency.update_layout(
         title='Frequency Analysis',
-        xaxis=dict(title='Weekday'),
-        yaxis=dict(title='Frequency', range=[0, max_frequency], dtick=10, autorange=True),
+        xaxis=dict(title='Frequency'),
+        yaxis=dict(title='Count', range=[0, max_frequency], dtick=10, autorange=True),
         showlegend=False,
         width = 400, 
         height = 600
@@ -320,8 +320,8 @@ if __name__ == "__main__":
 
     fig_monetary.update_layout(
         title='Monetary Analysis',
-        xaxis=dict(title='Weekday'),
-        yaxis=dict(title='Monetary', range=[0, max_monetary], dtick=100000, autorange=True),
+        xaxis=dict(title='Monetary'),
+        yaxis=dict(title='count', range=[0, max_monetary], dtick=100000, autorange=True),
         showlegend=False,
         width = 400,
         height = 600
