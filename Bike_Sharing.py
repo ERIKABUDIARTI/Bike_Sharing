@@ -226,9 +226,9 @@ def rfm_analysis(bike_df):
     current_date = max(hour_df['dteday'])
     
     rfm_df = bike_df.groupby('registered').agg({
-        'dteday': lambda x: (current_date - x.max()).days,  # Recency
-        'instant': 'count',  # Frequency
-        'cnt': 'sum'  # Monetary
+        'dteday': lambda x: (current_date - x.max()).days,
+        'instant': 'count',
+        'cnt': 'sum'
     }).reset_index()
 
     rfm_df.columns = ['registered', 'Recency', 'Frequency', 'Monetary']
@@ -238,7 +238,7 @@ def rfm_analysis(bike_df):
 if __name__ == "__main__":
     main()
 
-    bike_df = read_data('bike.csv')
+    bike_df = read_data('bike_data.csv')
     rfm_df = rfm_analysis(bike_df)
 
     # Display RFM Analysis
