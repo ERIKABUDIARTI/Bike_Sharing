@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+sns.set(style='dark')
 import plotly.figure_factory as ff
 import plotly.express as px
 import plotly.graph_objects as go
@@ -70,7 +71,7 @@ bike_df = read_data("bike_data.csv")
 bike_df['dteday'] = pd.to_datetime(bike_df['dteday']).dt.date
 
 # Display Daily Users
-st.subheader("Daily Users")
+st.markdown("<h2 style='text-align: center;'>Daily Users</h2>", unsafe_allow_html=True)
 col1, col2, col3 = st.columns(3)
  
 with col1:
@@ -92,7 +93,6 @@ ax.set_xlabel('Date', fontsize=4)
 ax.set_ylabel('User Count', fontsize=4)
 ax.tick_params(axis='x', labelsize=4)  
 ax.tick_params(axis='y', labelsize=4) 
-plt.xticks(rotation=45)
 ax.grid(True)
 plt.tight_layout()
 st.pyplot(fig)
