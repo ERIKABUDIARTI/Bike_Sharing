@@ -286,9 +286,9 @@ if __name__ == "__main__":
                                  color_discrete_sequence=['green'])
 
     # Monetary
-    fig_monetary = px.density_contour(rfm_df, 
-                                      x='Monetary', 
-                                      color_discrete_sequence=['blue'])
+    fig_monetary = px.histogram(rfm_df, 
+                                x='Monetary', 
+                                color_discrete_sequence=['blue'])
         
     fig_recency.update_layout(
         title='Recency Analysis',
