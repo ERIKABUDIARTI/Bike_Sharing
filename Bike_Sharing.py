@@ -158,7 +158,7 @@ def season_rent(bike_df):
                    color_discrete_map={'Spring': '#4CB9E7', 'Summer': '#A8DF8E', 'Fall': '#B15EFF', 'Winter': '#FE0000'})
     fig4.update_xaxes(title_text='Hour')
     fig4.update_yaxes(title_text='Total Rent')
-    fig4.update_yaxes(range=[0, 65000], dtick=5000, autorange=False)
+    fig4.update_yaxes(range=[0, 110000], dtick=10000, autorange=False)
     fig4.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig4.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
     fig4.update_layout(title='Total Rent of Different Season',title_font=dict(size=30))
