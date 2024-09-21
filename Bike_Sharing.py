@@ -274,23 +274,20 @@ if __name__ == "__main__":
         st.metric("Average Monetary", value=avg_monetary)
         st.metric("Maximal Monetary", value=max_monetary)
 
-    # Histogram for Recency
-    fig_recency = go.Figure(go.Histogram(
-        x=rfm_df['Recency'], 
-        marker=dict(color='red')
-    ))
+    # Recency
+    fig_recency = px.density_contour(rfm_df, 
+                                     x='Recency', 
+                                     color_discrete_sequence=['red'])
+    
+    # Frequency
+    fig_frequency = px.density_contour(rfm_df, 
+                                       x='Frequency', 
+                                       color_discrete_sequence=['green'])
 
-    # Histogram for Frequency
-    fig_frequency = go.Figure(go.Histogram(
-        x=rfm_df['Frequency'], 
-        marker=dict(color='green')
-    ))
-
-    # Histogram for Monetary
-    fig_monetary = go.Figure(go.Histogram(
-        x=rfm_df['Monetary'], 
-        marker=dict(color='blue')
-    ))
+    # Monetary
+    fig_monetary = px.density_contour(rfm_df, 
+                                      x='Monetary', 
+                                      color_discrete_sequence=['blue'])
         
     fig_recency.update_layout(
         title='Recency Analysis',
