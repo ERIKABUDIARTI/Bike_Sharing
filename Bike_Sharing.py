@@ -92,9 +92,9 @@ with tab1:
     
     fig, ax = plt.subplots(figsize=(6, 4))
     sns.lineplot(data=bike_df, x='dteday', y='cnt', ax=ax, color='#9b5de5')
-    ax.set_title('Number of Users', fontsize=8)
-    ax.set_xlabel('Date', fontsize=4)
-    ax.set_ylabel('User Count', fontsize=4)
+    ax.set_title('Total Users', fontsize=8)
+    ax.set_xlabel('Date', fontsize=6)
+    ax.set_ylabel('User Count', fontsize=6)
     ax.tick_params(axis='x', labelsize=4)  
     ax.tick_params(axis='y', labelsize=4) 
     ax.grid(True)
@@ -194,12 +194,12 @@ with tab3:
         total_monthly_rent = bike_df.groupby('hr').agg({
             'cnt': 'sum'
         }).reset_index()
-        fig2 = px.bar(total_monthly_rent, x='hr', y='cnt')
+        fig2 = px.bar(total_hourly_rent, x='hr', y='cnt')
         # Mengatur warna batang secara manual
         fig2.update_traces(marker_color='#00c49a')
         fig2.update_xaxes(title_text='Hour')
         fig2.update_yaxes(title_text='Total Rent',range=[0, 350000], dtick=50000, autorange=(False))
-        fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+        fig2.update_layout(title='Total Hourly Rent',title_font=dict(size=30))
         fig2.update_layout(showlegend=False)
         fig2.update_layout(width=600, height=600)
         return fig2
