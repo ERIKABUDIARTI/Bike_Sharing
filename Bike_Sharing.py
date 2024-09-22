@@ -116,22 +116,15 @@ with tab2:
             3: 'Light Snow or Light Rain',
             4: 'Heavy Rain or Ice Pallets'
         }) 
-        # Menghitung nilai maksimum untuk setiap weather situation
-        total_rent_by_weather = bike_df.groupby('weathersit')['cnt'].sum().reset_index()
-        max_value = total_rent_by_weather['cnt'].max()
-    
-        fig1 = px.bar(bike_df, 
+
+        sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True)
+        fig1 = px.bar(sorted_bike_df, 
                         x='weathersit', 
                         y='cnt', 
                         color='weathersit', 
                         title='Total Rent of Different Weather',
-                        color_discrete_map={'Clear or Partly Cloudy': 'grey', 
-                                            'Misty or Few Clouds': 'grey', 
-                                            'Light Snow or Light Rain': 'grey', 
-                                            'Heavy Rain or Ice Pallets': 'grey'})
+                        color_discrete_sequence= ['#D3D3D3', '#D3D3D3', '#D3D3D3', '#0077B6']
             
-        fig1.for_each_trace(lambda trace: trace.update(marker_color=['red' if y == max_value else 'grey' for y in total_rent_by_weather['cnt']]))
-
         fig1.update_xaxes(title_text='Weather')
         fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
         fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
@@ -151,9 +144,6 @@ with tab2:
             3: 'Fall',
             4: 'Winter'
         })
-        # Menghitung nilai maksimum untuk setiap season
-        total_rent_by_season = bike_df.groupby('season')['cnt'].sum().reset_index()
-        max_value = total_rent_by_season['cnt'].max()
             
         fig2 = px.bar(bike_df, 
                     x='season', 
@@ -165,8 +155,6 @@ with tab2:
                                         'Fall': 'grey', 
                                         'Winter': 'grey'})
         
-        fig2.for_each_trace(lambda trace: trace.update(marker_color=['blue' if y == max_value else 'grey' for y in total_rent_by_season['cnt']]))
-
         fig2.update_xaxes(title_text='Season')
         fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
