@@ -1,1 +1,3 @@
-web: streamlit run Bike_Sharing.py
+web: 
+cd path/to/dashboard
+streamlit run Bike_Sharing.py
