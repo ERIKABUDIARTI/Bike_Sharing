@@ -91,7 +91,7 @@ with tab1:
         st.metric("Total Users", value=f'{total_users:,}')
     
     fig, ax = plt.subplots(figsize=(6, 4))
-    sns.lineplot(data=bike_df, x='dteday', y='cnt', ax=ax, color='#90CAF9')
+    sns.lineplot(data=bike_df, x='dteday', y='cnt', ax=ax, color='#9b5de5')
     ax.set_title('Number of Users', fontsize=8)
     ax.set_xlabel('Date', fontsize=4)
     ax.set_ylabel('User Count', fontsize=4)
