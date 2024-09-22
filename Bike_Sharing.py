@@ -106,126 +106,126 @@ with tab2:
     st.header("Nature Factor Influences on Total Rent")
     col1, col2 = st.columns(2)
     
-    with col1:
-        def weather_rent(bike_df):
-            bike_df = bike_df.groupby(['weathersit','hr']).agg({
-                'cnt': 'sum'
-            }).reset_index()
-            bike_df['weathersit'] = bike_df['weathersit'].map({
-                1: 'Clear or Partly Cloudy',
-                2: 'Misty or Few Clouds',
-                3: 'Light Snow or Light Rain',
-                4: 'Heavy Rain or Ice Pallets'
-            }) 
-            # Menghitung nilai maksimum untuk setiap weather situation
-            max_value = bike_df.groupby('weathersit')['cnt'].sum().max()
+    def weather_rent(bike_df):
+        bike_df = bike_df.groupby(['weathersit','hr']).agg({
+            'cnt': 'sum'
+        }).reset_index()
+        bike_df['weathersit'] = bike_df['weathersit'].map({
+            1: 'Clear or Partly Cloudy',
+            2: 'Misty or Few Clouds',
+            3: 'Light Snow or Light Rain',
+            4: 'Heavy Rain or Ice Pallets'
+        }) 
+        # Menghitung nilai maksimum untuk setiap weather situation
+        max_value = bike_df.groupby('weathersit')['cnt'].sum().max()
     
-            fig1 = px.bar(bike_df, 
-                          x='weathersit', 
-                          y='cnt', 
-                          color='weathersit', 
-                          title='Total Rent of Different Weather',
-                          color_discrete_map={'Clear or Partly Cloudy': 'grey', 
-                                              'Misty or Few Clouds': 'grey', 
-                                              'Light Snow or Light Rain': 'grey', 
-                                              'Heavy Rain or Ice Pallets': 'grey'})
+        fig1 = px.bar(bike_df, 
+                        x='weathersit', 
+                        y='cnt', 
+                        color='weathersit', 
+                        title='Total Rent of Different Weather',
+                        color_discrete_map={'Clear or Partly Cloudy': 'grey', 
+                                            'Misty or Few Clouds': 'grey', 
+                                            'Light Snow or Light Rain': 'grey', 
+                                            'Heavy Rain or Ice Pallets': 'grey'})
             
-            fig1.for_each_trace(lambda trace: trace.update(marker_color='red') if trace.name == max_value else trace.update(marker_color='grey'))
+        fig1.for_each_trace(lambda trace: trace.update(marker_color='red') if trace.name == max_value else trace.update(marker_color='grey'))
     
-            fig1.update_xaxes(title_text='Weather')
-            fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
-            fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
-            fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
-            fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
-            fig1.update_layout(width=600, height=600)
-            fig1.update_layout(legend_title_text='Weather Situation')
-            return fig1
+        fig1.update_xaxes(title_text='Weather')
+        fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
+        fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
+        fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
+        fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
+        fig1.update_layout(width=600, height=600)
+        fig1.update_layout(legend_title_text='Weather Situation')
+        return fig1
 
-    with col2:
-        def season_rent(bike_df):
-            bike_df = bike_df.groupby(['season','hr']).agg({
-                'cnt': 'sum'
-            }).reset_index()
-            bike_df['season'] = bike_df['season'].map({
-                1: 'Spring',
-                2: 'Summer',
-                3: 'Fall',
-                4: 'Winter'
-            })
-            # Menghitung nilai maksimum untuk setiap season
-            max_value = bike_df.groupby('season')['cnt'].sum().max()
+    def season_rent(bike_df):
+        bike_df = bike_df.groupby(['season','hr']).agg({
+            'cnt': 'sum'
+        }).reset_index()
+        bike_df['season'] = bike_df['season'].map({
+            1: 'Spring',
+            2: 'Summer',
+            3: 'Fall',
+            4: 'Winter'
+        })
+        # Menghitung nilai maksimum untuk setiap season
+        max_value = bike_df.groupby('season')['cnt'].sum().max()
             
-            fig2 = px.bar(bike_df, 
-                      x='season', 
-                      y='cnt', 
-                      color='season', 
-                      title='Total Rent of Different Season',
-                      color_discrete_map={'Spring': 'grey', 
-                                          'Summer': 'grey', 
-                                          'Fall': 'grey', 
-                                          'Winter': 'grey'})
+        fig2 = px.bar(bike_df, 
+                    x='season', 
+                    y='cnt', 
+                    color='season', 
+                    title='Total Rent of Different Season',
+                    color_discrete_map={'Spring': 'grey', 
+                                        'Summer': 'grey', 
+                                        'Fall': 'grey', 
+                                        'Winter': 'grey'})
         
-            fig2.for_each_trace(lambda trace: trace.update(marker_color='red') if trace.name == max_value else trace.update(marker_color='grey'))
+        fig2.for_each_trace(lambda trace: trace.update(marker_color='red') if trace.name == max_value else trace.update(marker_color='grey'))
     
-            fig2.update_xaxes(title_text='Season')
-            fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
-            fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
-            fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
-            fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
-            fig2.update_layout(width=600, height=600)
-            fig2.update_layout(legend_title_text='Season')
-            return fig2
+        fig2.update_xaxes(title_text='Season')
+        fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
+        fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
+        fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
+        fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
+        fig2.update_layout(width=600, height=600)
+        fig2.update_layout(legend_title_text='Season')
+        return fig2
 
-    st.plotly_chart(weather_rent(bike_df))
-    st.plotly_chart(season_rent(bike_df))
+    with col1:
+        st.plotly_chart(weather_rent(bike_df))
+    with col2:
+        st.plotly_chart(season_rent(bike_df))
 
 
 with tab3:
     st.header("Users by Month and Hour")
     col1, col2 = st.columns(2)
 
-    with col1:
-        def total_monthly_rent(bike_df):
-            start_month = 1
-            end_month = 12
-            filtered_df = bike_df[
-                (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
-            total_sewa = filtered_df['cnt'].sum()
-            total_monthly_rent = bike_df.groupby('mnth').agg({
-                'cnt': 'sum'
-            }).reset_index()
-            fig1 = px.bar(total_monthly_rent, x='mnth', y='cnt')
-            # Mengatur warna batang secara manual
-            fig1.update_traces(marker_color='blue')
-            fig1.update_xaxes(title_text='Month')
-            fig1.update_yaxes(title_text='Total Rent')
-            fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
-            fig1.update_layout(showlegend=False)
-            fig1.update_layout(width=600, height=600)
-            return fig1
+    def total_monthly_rent(bike_df):
+        start_month = 1
+        end_month = 12
+        filtered_df = bike_df[
+            (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
+        total_sewa = filtered_df['cnt'].sum()
+        total_monthly_rent = bike_df.groupby('mnth').agg({
+            'cnt': 'sum'
+        }).reset_index()
+        fig1 = px.bar(total_monthly_rent, x='mnth', y='cnt')
+        # Mengatur warna batang secara manual
+        fig1.update_traces(marker_color='blue')
+        fig1.update_xaxes(title_text='Month')
+        fig1.update_yaxes(title_text='Total Rent')
+        fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+        fig1.update_layout(showlegend=False)
+        fig1.update_layout(width=600, height=600)
+        return fig1
 
+    def total_monthly_rent(bike_df):
+        start_month = 1
+        end_month = 12
+        filtered_df = bike_df[
+            (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
+        total_sewa = filtered_df['cnt'].sum()
+        total_monthly_rent = bike_df.groupby('mnth').agg({
+            'cnt': 'sum'
+        }).reset_index()
+        fig2 = px.bar(total_monthly_rent, x='mnth', y='cnt')
+        # Mengatur warna batang secara manual
+        fig2.update_traces(marker_color='blue')
+        fig2.update_xaxes(title_text='Month')
+        fig2.update_yaxes(title_text='Total Rent')
+        fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+        fig2.update_layout(showlegend=False)
+        fig2.update_layout(width=600, height=600)
+        return fig2
+
+    with col1:
+        st.plotly_chart(total_hourly_rent(bike_df))
     with col2:
-        def total_monthly_rent(bike_df):
-            start_month = 1
-            end_month = 12
-            filtered_df = bike_df[
-                (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
-            total_sewa = filtered_df['cnt'].sum()
-            total_monthly_rent = bike_df.groupby('mnth').agg({
-                'cnt': 'sum'
-            }).reset_index()
-            fig2 = px.bar(total_monthly_rent, x='mnth', y='cnt')
-            # Mengatur warna batang secara manual
-            fig2.update_traces(marker_color='blue')
-            fig2.update_xaxes(title_text='Month')
-            fig2.update_yaxes(title_text='Total Rent')
-            fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
-            fig2.update_layout(showlegend=False)
-            fig2.update_layout(width=600, height=600)
-            return fig2
-        
-    st.plotly_chart(total_hourly_rent(bike_df))
-    st.plotly_chart(total_monthly_rent(bike_df))
+        st.plotly_chart(total_monthly_rent(bike_df))
 
 def main():
     bike_df = read_data('bike_data.csv')
