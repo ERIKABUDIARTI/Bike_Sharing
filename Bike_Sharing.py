@@ -126,7 +126,7 @@ with tab2:
                         color_discrete_sequence= ['#a9def9', '#a9def9', '#a9def9', '#00bbf9'])
             
         fig1.update_xaxes(title_text='Weather')
-        fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
+        fig1.update_yaxes(title_text='Total Rent', range=[0, 2500000], dtick=25000, autorange=False)
         fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
@@ -154,7 +154,7 @@ with tab2:
                     color_discrete_sequence= ['#efc3e6', '#efc3e6', '#efc3e6', '#f15bb5'])
 
         fig2.update_xaxes(title_text='Season')
-        fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
+        fig2.update_yaxes(title_text='Total Rent', range=[0, 850000], dtick=25000, autorange=False)
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
