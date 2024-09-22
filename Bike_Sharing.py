@@ -123,7 +123,7 @@ with tab2:
                         y='cnt', 
                         color='weathersit', 
                         title='Total Rent of Different Weather',
-                        color_discrete_sequence= ['#D3D3D3', '#D3D3D3', '#D3D3D3', '#00bbf9'])
+                        color_discrete_sequence= ['#a9def9', '#a9def9', '#a9def9', '#00bbf9'])
             
         fig1.update_xaxes(title_text='Weather')
         fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
@@ -150,7 +150,7 @@ with tab2:
                     y='cnt', 
                     color='season', 
                     title='Total Rent of Different Season',
-                    color_discrete_sequence= ['#D3D3D3', '#D3D3D3', '#D3D3D3', '#f15bb5'])
+                    color_discrete_sequence= ['#efc3e6', '#efc3e6', '#efc3e6', '#f15bb5'])
 
         fig2.update_xaxes(title_text='Season')
         fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
