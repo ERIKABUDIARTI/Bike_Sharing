@@ -117,7 +117,8 @@ with tab2:
             4: 'Heavy Rain or Ice Pallets'
         }) 
         # Menghitung nilai maksimum untuk setiap weather situation
-        max_value = bike_df.groupby('weathersit')['cnt'].sum().max()
+        total_rent_by_weather = bike_df.groupby('weathersit')['cnt'].sum().reset_index()
+        max_value = total_rent_by_weather['cnt'].max()
     
         fig1 = px.bar(bike_df, 
                         x='weathersit', 
@@ -151,7 +152,8 @@ with tab2:
             4: 'Winter'
         })
         # Menghitung nilai maksimum untuk setiap season
-        max_value = bike_df.groupby('season')['cnt'].sum().max()
+        total_rent_by_season = bike_df.groupby('season')['cnt'].sum().reset_index()
+        max_value = total_rent_by_season['cnt'].max()
             
         fig2 = px.bar(bike_df, 
                     x='season', 
