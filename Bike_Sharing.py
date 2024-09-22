@@ -177,7 +177,7 @@ with tab3:
         }).reset_index()
         fig1 = px.bar(total_monthly_rent, x='mnth', y='cnt')
         # Mengatur warna batang secara manual
-        fig1.update_traces(marker_color='fee440')
+        fig1.update_traces(marker_color='#fee440')
         fig1.update_xaxes(title_text='Month')
         fig1.update_yaxes(title_text='Total Rent',range=[0, 350000], dtick=50000, autorange=(False))
         fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
@@ -196,7 +196,7 @@ with tab3:
         }).reset_index()
         fig2 = px.bar(total_monthly_rent, x='hr', y='cnt')
         # Mengatur warna batang secara manual
-        fig2.update_traces(marker_color='00c49a')
+        fig2.update_traces(marker_color='#00c49a')
         fig2.update_xaxes(title_text='Hour')
         fig2.update_yaxes(title_text='Total Rent',range=[0, 350000], dtick=50000, autorange=(False))
         fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
