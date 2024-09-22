@@ -1,1 +1,1 @@
-web: streamlit run dashboard/Bike_Sharing.py
+web: streamlit run Bike_Sharing.py
