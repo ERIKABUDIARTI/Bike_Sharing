@@ -107,7 +107,7 @@ with tab2:
     col1, col2 = st.columns(2)
     
     def weather_rent(bike_df):
-        bike_df = bike_df.groupby(['weathersit','hr']).agg({
+        bike_df = bike_df.groupby(['weathersit']).agg({
             'cnt': 'sum'
         }).reset_index()
         bike_df['weathersit'] = bike_df['weathersit'].map({
@@ -131,10 +131,11 @@ with tab2:
         fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
         fig1.update_layout(width=600, height=600)
+        fig1.update_layout(showlegend=False)
         return fig1
 
     def season_rent(bike_df):
-        bike_df = bike_df.groupby(['season','hr']).agg({
+        bike_df = bike_df.groupby(['season']).agg({
             'cnt': 'sum'
         }).reset_index()
         bike_df['season'] = bike_df['season'].map({
@@ -158,6 +159,7 @@ with tab2:
         fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
         fig2.update_layout(width=600, height=600)
+        fig2.update_layout(showlegend=False)
         return fig2
 
     with col1:
