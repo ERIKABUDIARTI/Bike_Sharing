@@ -123,7 +123,7 @@ with tab2:
                         y='cnt', 
                         color='weathersit', 
                         title='Total Rent of Different Weather',
-                        color_discrete_sequence= ['#D3D3D3', '#D3D3D3', '#D3D3D3', '#0077B6']
+                        color_discrete_sequence= ['#D3D3D3', '#D3D3D3', '#D3D3D3', '#00bbf9'])
             
         fig1.update_xaxes(title_text='Weather')
         fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
@@ -144,17 +144,15 @@ with tab2:
             3: 'Fall',
             4: 'Winter'
         })
-            
+        
+        sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True)    
         fig2 = px.bar(bike_df, 
                     x='season', 
                     y='cnt', 
                     color='season', 
                     title='Total Rent of Different Season',
-                    color_discrete_map={'Spring': 'grey', 
-                                        'Summer': 'grey', 
-                                        'Fall': 'grey', 
-                                        'Winter': 'grey'})
-        
+                    color_discrete_sequence= ['#D3D3D3', '#D3D3D3', '#D3D3D3', '#f15bb5'])
+
         fig2.update_xaxes(title_text='Season')
         fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
