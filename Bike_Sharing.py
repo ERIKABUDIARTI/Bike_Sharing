@@ -88,7 +88,7 @@ with tab1:
         
     with colc:
         total_users = bike_df.cnt.sum()
-        st.metric("Total Users", value=f'{total_users:,}')
+        st.metric("Total User", value=f'{total_users:,}')
     
     fig, ax = plt.subplots(figsize=(6, 4))
     sns.lineplot(data=bike_df, x='dteday', y='cnt', ax=ax, color='#9b5de5')
