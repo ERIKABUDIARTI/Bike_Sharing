@@ -186,43 +186,43 @@ with tab3:
 
     with col1:
         def total_monthly_rent(bike_df):
-        start_month = 1
-        end_month = 12
-        filtered_df = bike_df[
-            (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
-        total_sewa = filtered_df['cnt'].sum()
-        total_monthly_rent = bike_df.groupby('mnth').agg({
-            'cnt': 'sum'
-        }).reset_index()
-        fig1 = px.bar(total_monthly_rent, x='mnth', y='cnt')
-        # Mengatur warna batang secara manual
-        fig1.update_traces(marker_color='blue')
-        fig1.update_xaxes(title_text='Month')
-        fig1.update_yaxes(title_text='Total Rent')
-        fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
-        fig1.update_layout(showlegend=False)
-        fig1.update_layout(width=600, height=600)
-        return fig1
+            start_month = 1
+            end_month = 12
+            filtered_df = bike_df[
+                (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
+            total_sewa = filtered_df['cnt'].sum()
+            total_monthly_rent = bike_df.groupby('mnth').agg({
+                'cnt': 'sum'
+            }).reset_index()
+            fig1 = px.bar(total_monthly_rent, x='mnth', y='cnt')
+            # Mengatur warna batang secara manual
+            fig1.update_traces(marker_color='blue')
+            fig1.update_xaxes(title_text='Month')
+            fig1.update_yaxes(title_text='Total Rent')
+            fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+            fig1.update_layout(showlegend=False)
+            fig1.update_layout(width=600, height=600)
+            return fig1
 
     with col2:
         def total_monthly_rent(bike_df):
-        start_month = 1
-        end_month = 12
-        filtered_df = bike_df[
-            (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
-        total_sewa = filtered_df['cnt'].sum()
-        total_monthly_rent = bike_df.groupby('mnth').agg({
-            'cnt': 'sum'
-        }).reset_index()
-        fig2 = px.bar(total_monthly_rent, x='mnth', y='cnt')
-        # Mengatur warna batang secara manual
-        fig2.update_traces(marker_color='blue')
-        fig2.update_xaxes(title_text='Month')
-        fig2.update_yaxes(title_text='Total Rent')
-        fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
-        fig2.update_layout(showlegend=False)
-        fig2.update_layout(width=600, height=600)
-        return fig2
+            start_month = 1
+            end_month = 12
+            filtered_df = bike_df[
+                (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
+            total_sewa = filtered_df['cnt'].sum()
+            total_monthly_rent = bike_df.groupby('mnth').agg({
+                'cnt': 'sum'
+            }).reset_index()
+            fig2 = px.bar(total_monthly_rent, x='mnth', y='cnt')
+            # Mengatur warna batang secara manual
+            fig2.update_traces(marker_color='blue')
+            fig2.update_xaxes(title_text='Month')
+            fig2.update_yaxes(title_text='Total Rent')
+            fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+            fig2.update_layout(showlegend=False)
+            fig2.update_layout(width=600, height=600)
+            return fig2
         
     st.plotly_chart(total_hourly_rent(bike_df))
     st.plotly_chart(total_monthly_rent(bike_df))
