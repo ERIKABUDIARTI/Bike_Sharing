@@ -148,7 +148,7 @@ with tab2:
                     color_discrete_sequence= ['#efc3e6', '#efc3e6', '#efc3e6', '#f15bb5'])
 
         fig2.update_xaxes(title_text='Season')
-        fig2.update_yaxes(title_text='Total Rent', range=[0, 1100000], dtick=250000, autorange=False)
+        fig2.update_yaxes(title_text='Total Rent', range=[0, 1250000], dtick=250000, autorange=False)
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
