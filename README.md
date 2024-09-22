@@ -4,7 +4,7 @@
 ```
 conda create --name Bike_Sharing python=3.11.5
 conda activate Bike_Sharing
-pip install numpy pandas plotly vscode streamlit
+pip install numpy pandas matplotlib seaborn plotly vscode streamlit
 ```
 
 ## Run Streamlit app
