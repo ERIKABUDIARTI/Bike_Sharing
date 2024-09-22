@@ -72,7 +72,7 @@ bike_df['dteday'] = pd.to_datetime(bike_df['dteday'])
 bike_df.resample('M', on='dteday').sum()
 
 
-tab1, tab2, tab3, tab4 = st.tab(["Total User", "Users by Nature Factors", "Users by Month and Hour", "RFM Analysis"])
+tab1, tab2, tab3, tab4 = st.tabs(["Total User", "Users by Nature Factors", "Users by Month and Hour", "RFM Analysis"])
 
 with tab1:
     st.header("Daily Users")
