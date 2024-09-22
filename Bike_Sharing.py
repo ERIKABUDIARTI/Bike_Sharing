@@ -71,6 +71,16 @@ bike_df = read_data("bike_data.csv")
 bike_df['dteday'] = pd.to_datetime(bike_df['dteday'])
 bike_df.resample('M', on='dteday').sum()
 
+st.markdown(
+    """
+    <style>
+    .stTab {
+        margin-right: 20px;  /* Mengatur jarak kanan antar tab */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 tab1, tab2, tab3, tab4 = st.tabs(["Total User", "User by Nature Factors", "User by Month and Hour", "RFM Analysis"])
 
