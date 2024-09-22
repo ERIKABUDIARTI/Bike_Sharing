@@ -180,7 +180,7 @@ with tab3:
         fig1.update_traces(marker_color='blue')
         fig1.update_xaxes(title_text='Month')
         fig1.update_yaxes(title_text='Total Rent')
-        fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+        fig1.update_layout(title='Total Monthly Rent',title_font=dict(size=30),range=[0, 350000], dtick=50000, autorange=False)
         fig1.update_layout(showlegend=False)
         fig1.update_layout(width=600, height=600)
         return fig1
@@ -199,7 +199,7 @@ with tab3:
         fig2.update_traces(marker_color='red')
         fig2.update_xaxes(title_text='Hour')
         fig2.update_yaxes(title_text='Total Rent')
-        fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
+        fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30), range=[0, 350000], dtick=50000, autorange=False)
         fig2.update_layout(showlegend=False)
         fig2.update_layout(width=600, height=600)
         return fig2
