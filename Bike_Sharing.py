@@ -131,7 +131,6 @@ with tab2:
         fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
         fig1.update_layout(width=600, height=600)
-        fig1.update_layout(legend_title_text='Weather Situation')
         return fig1
 
     def season_rent(bike_df):
@@ -159,7 +158,6 @@ with tab2:
         fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
         fig2.update_layout(width=600, height=600)
-        fig2.update_layout(legend_title_text='Season')
         return fig2
 
     with col1:
