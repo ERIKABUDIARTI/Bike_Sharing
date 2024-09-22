@@ -113,7 +113,7 @@ with tab2:
             3: 'Light Snow or Light Rain',
             4: 'Heavy Rain or Ice Pallets'
         }) 
-        sorted_weather_df = bike_df.groupby('weathersit').agg({'cnt': 'sum'}).reset_index().sort_values(by='weathersit', ascending=True)
+        sorted_weather_df = bike_df.groupby('weathersit').agg({'cnt': 'sum'}).reset_index().sort_values(by='cnt', ascending=True)
 
         fig1 = px.bar(sorted_weather_df, 
                         x='weathersit', 
@@ -138,7 +138,7 @@ with tab2:
             3: 'Fall',
             4: 'Winter'
         })
-        sorted_season_df = bike_df.groupby('season').agg({'cnt': 'sum'}).reset_index().sort_values(by='season', ascending=True)
+        sorted_season_df = bike_df.groupby('season').agg({'cnt': 'sum'}).reset_index().sort_values(by='cnt', ascending=True)
 
         fig2 = px.bar(sorted_season_df, 
                     x='season', 
