@@ -165,7 +165,7 @@ with tab2:
                                         'Fall': 'grey', 
                                         'Winter': 'grey'})
         
-        fig1.for_each_trace(lambda trace: trace.update(marker_color=['blue' if y == max_value else 'grey' for y in total_rent_by_season['cnt']]))
+        fig2.for_each_trace(lambda trace: trace.update(marker_color=['blue' if y == max_value else 'grey' for y in total_rent_by_season['cnt']]))
 
         fig2.update_xaxes(title_text='Season')
         fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
