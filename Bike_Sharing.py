@@ -130,7 +130,7 @@ with tab2:
         fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
-        fig1.update_layout(width=600, height=600)
+        fig1.update_layout(width=600, height=900)
         fig1.update_layout(showlegend=False)
         return fig1
 
@@ -158,7 +158,7 @@ with tab2:
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
-        fig2.update_layout(width=600, height=600)
+        fig2.update_layout(width=600, height=900)
         fig2.update_layout(showlegend=False)
         return fig2
 
