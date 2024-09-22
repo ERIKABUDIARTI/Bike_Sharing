@@ -129,8 +129,8 @@ with tab2:
                                             'Light Snow or Light Rain': 'grey', 
                                             'Heavy Rain or Ice Pallets': 'grey'})
             
-        fig1.for_each_trace(lambda trace: trace.update(marker_color='red') if trace.name == max_value else trace.update(marker_color='grey'))
-    
+        fig1.for_each_trace(lambda trace: trace.update(marker_color=['red' if y == max_value else 'grey' for y in total_rent_by_weather['cnt']]))
+
         fig1.update_xaxes(title_text='Weather')
         fig1.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
         fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
@@ -163,8 +163,8 @@ with tab2:
                                         'Fall': 'grey', 
                                         'Winter': 'grey'})
         
-        fig2.for_each_trace(lambda trace: trace.update(marker_color='red') if trace.name == max_value else trace.update(marker_color='grey'))
-    
+        fig1.for_each_trace(lambda trace: trace.update(marker_color=['blue' if y == max_value else 'grey' for y in total_rent_by_season['cnt']]))
+
         fig2.update_xaxes(title_text='Season')
         fig2.update_yaxes(title_text='Total Rent', range=[0, 275000], dtick=25000, autorange=False)
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
