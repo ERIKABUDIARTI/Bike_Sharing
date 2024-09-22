@@ -25,10 +25,10 @@ st.write("""
         """)
 
 #Add picture
-bike_img = Image.open("dashboard/bike.jpg")
-idcamp_img = Image.open("dashboard/IDCamp.jpg")
+bike_img = Image.open("bike.jpg")
+idcamp_img = Image.open("IDCamp.jpg")
 
-image_file = ["dashboard/indosat.jpg", "dashboard/dicoding.jpg"]
+image_file = ["indosat.jpg", "dicoding.jpg"]
 desired_width = 150
 desired_height = 60
 
@@ -67,7 +67,7 @@ def read_data(csv):
     bike_df = pd.read_csv(csv)
     return bike_df
 
-bike_df = read_data("dashboard/bike_data.csv")
+bike_df = read_data("bike_data.csv")
 bike_df['dteday'] = pd.to_datetime(bike_df['dteday'])
 bike_df.resample('M', on='dteday').sum()
 
@@ -221,7 +221,7 @@ with tab3:
         st.plotly_chart(total_monthly_rent(bike_df))
 
 def main():
-    bike_df = read_data('dashboard/bike_data.csv')
+    bike_df = read_data('bike_data.csv')
     total_hourly_rent(bike_df)
     total_monthly_rent(bike_df)
     weather_rent(bike_df)
@@ -252,9 +252,9 @@ with tab4:
 
     if __name__ == "__main__":
         main()
-        day_df = read_data('dashboard/day.csv')
-        hour_df = read_data('dashboard/hour.csv')
-        bike_df = read_data('dashboard/bike_data.csv')
+        day_df = read_data('day.csv')
+        hour_df = read_data('hour.csv')
+        bike_df = read_data('bike_data.csv')
         rfm_df = rfm_analysis(bike_df)
 
 
