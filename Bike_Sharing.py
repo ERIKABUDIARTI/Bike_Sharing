@@ -107,18 +107,15 @@ with tab2:
     col1, col2 = st.columns(2)
     
     def weather_rent(bike_df):
-        bike_df = bike_df.groupby(['weathersit']).agg({
-            'cnt': 'sum'
-        }).reset_index()
         bike_df['weathersit'] = bike_df['weathersit'].map({
             1: 'Clear or Partly Cloudy',
             2: 'Misty or Few Clouds',
             3: 'Light Snow or Light Rain',
             4: 'Heavy Rain or Ice Pallets'
         }) 
-        sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True)
-        
-        fig1 = px.bar(sorted_bike_df, 
+        sorted_weather_df = bike_df.groupby('weathersit').agg({'cnt': 'sum'}).reset_index().sort_values(by='weathersit', ascending=True)
+
+        fig1 = px.bar(sorted_weather_df, 
                         x='weathersit', 
                         y='cnt', 
                         color='weathersit', 
@@ -126,27 +123,24 @@ with tab2:
                         color_discrete_sequence= ['#a9def9', '#a9def9', '#a9def9', '#00bbf9'])
             
         fig1.update_xaxes(title_text='Weather')
-        fig1.update_yaxes(title_text='Total Rent', range=[0, 2500000], dtick=25000, autorange=False)
+        fig1.update_yaxes(title_text='Total Rent', range=[0, 2500000], dtick=250000, autorange=False)
         fig1.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig1.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
-        fig1.update_layout(width=600, height=900)
+        fig1.update_layout(width=600, height=800)
         fig1.update_layout(showlegend=False)
         return fig1
 
     def season_rent(bike_df):
-        bike_df = bike_df.groupby(['season']).agg({
-            'cnt': 'sum'
-        }).reset_index()
         bike_df['season'] = bike_df['season'].map({
             1: 'Spring',
             2: 'Summer',
             3: 'Fall',
             4: 'Winter'
         })
-        sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True) 
-        
-        fig2 = px.bar(bike_df, 
+        sorted_season_df = bike_df.groupby('season').agg({'cnt': 'sum'}).reset_index().sort_values(by='season', ascending=True)
+
+        fig2 = px.bar(sorted_season_df, 
                     x='season', 
                     y='cnt', 
                     color='season', 
@@ -154,11 +148,11 @@ with tab2:
                     color_discrete_sequence= ['#efc3e6', '#efc3e6', '#efc3e6', '#f15bb5'])
 
         fig2.update_xaxes(title_text='Season')
-        fig2.update_yaxes(title_text='Total Rent', range=[0, 850000], dtick=25000, autorange=False)
+        fig2.update_yaxes(title_text='Total Rent', range=[0, 1100000], dtick=250000, autorange=False)
         fig2.update_xaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_yaxes(title_font=dict(size=15), tickfont=dict(size=12))
         fig2.update_layout(title='Total Rent of Different Weather', title_font=dict(size=30))
-        fig2.update_layout(width=600, height=900)
+        fig2.update_layout(width=600, height=800)
         fig2.update_layout(showlegend=False)
         return fig2
 
