@@ -74,8 +74,9 @@ bike_df.resample('M', on='dteday').sum()
 st.markdown(
     """
     <style>
-    .stTab {
-        margin-right: 60px;
+    div[data-baseweb="tab-list"] {
+        display: flex;
+        justify-content: space-between;
     }
     </style>
     """,
