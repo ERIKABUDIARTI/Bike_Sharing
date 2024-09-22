@@ -107,6 +107,9 @@ with tab2:
     col1, col2 = st.columns(2)
     
     def weather_rent(bike_df):
+        bike_df = bike_df.groupby(['weathersit']).agg({
+            'cnt': 'sum'
+        }).reset_index()
         bike_df['weathersit'] = bike_df['weathersit'].map({
             1: 'Clear or Partly Cloudy',
             2: 'Misty or Few Clouds',
@@ -132,6 +135,9 @@ with tab2:
         return fig1
 
     def season_rent(bike_df):
+        bike_df = bike_df.groupby(['season']).agg({
+            'cnt': 'sum'
+        }).reset_index()
         bike_df['season'] = bike_df['season'].map({
             1: 'Spring',
             2: 'Summer',
