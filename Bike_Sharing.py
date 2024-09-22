@@ -191,7 +191,7 @@ with tab3:
         filtered_df = bike_df[
             (bike_df['hr'] >= start_hour) & (bike_df['hr'] <= end_hour)]
         total_sewa = filtered_df['cnt'].sum()
-        total_monthly_rent = bike_df.groupby('hr').agg({
+        total_hourly_rent = bike_df.groupby('hr').agg({
             'cnt': 'sum'
         }).reset_index()
         fig2 = px.bar(total_hourly_rent, x='hr', y='cnt')
