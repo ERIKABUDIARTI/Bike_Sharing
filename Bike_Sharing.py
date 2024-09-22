@@ -203,19 +203,19 @@ with tab3:
         fig1.update_layout(width=600, height=600)
         return fig1
 
-    def total_monthly_rent(bike_df):
-        start_month = 1
-        end_month = 12
+    def total_hourly_rent(bike_df):
+        start_hour = 0
+        end_hour = 23
         filtered_df = bike_df[
-            (bike_df['mnth'] >= start_month) & (bike_df['mnth'] <= end_month)]
+            (bike_df['hr'] >= start_hour) & (bike_df['hr'] <= end_hour)]
         total_sewa = filtered_df['cnt'].sum()
-        total_monthly_rent = bike_df.groupby('mnth').agg({
+        total_monthly_rent = bike_df.groupby('hr').agg({
             'cnt': 'sum'
         }).reset_index()
-        fig2 = px.bar(total_monthly_rent, x='mnth', y='cnt')
+        fig2 = px.bar(total_monthly_rent, x='hr', y='cnt')
         # Mengatur warna batang secara manual
-        fig2.update_traces(marker_color='blue')
-        fig2.update_xaxes(title_text='Month')
+        fig2.update_traces(marker_color='red')
+        fig2.update_xaxes(title_text='Hour')
         fig2.update_yaxes(title_text='Total Rent')
         fig2.update_layout(title='Total Monthly Rent',title_font=dict(size=30))
         fig2.update_layout(showlegend=False)
