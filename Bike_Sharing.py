@@ -116,8 +116,9 @@ with tab2:
             3: 'Light Snow or Light Rain',
             4: 'Heavy Rain or Ice Pallets'
         }) 
-
         sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True)
+        return sorted_bike_df
+        
         fig1 = px.bar(sorted_bike_df, 
                         x='weathersit', 
                         y='cnt', 
@@ -144,8 +145,9 @@ with tab2:
             3: 'Fall',
             4: 'Winter'
         })
+        sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True)
+        return sorted_bike_df  
         
-        sorted_bike_df = bike_df.sort_values(by='cnt', ascending=True)    
         fig2 = px.bar(bike_df, 
                     x='season', 
                     y='cnt', 
