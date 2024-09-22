@@ -75,7 +75,7 @@ st.markdown(
     """
     <style>
     .stTab {
-        margin-right: 20px;  /* Mengatur jarak kanan antar tab */
+        margin-right: 60px;
     }
     </style>
     """,
